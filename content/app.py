@@ -87,10 +87,10 @@ def signin():
     
     response = make_response(redirect('/'))
     ##Oude code
-    ## response.set_cookie('user_id', str(user_id))
+    ##response.set_cookie('user_id', str(user_id))
 
     ##nieuwe code
-    response.set_cookie('user_id', str(user_id), secure=True, httponly=True, samesite='Lax')
+    ##response.set_cookie('user_id', str(user_id), secure=True, httponly=True, samesite='Lax')
     return response
 
 
