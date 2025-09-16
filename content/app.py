@@ -48,7 +48,15 @@ def get_comments_page(quote_id):
 @app.route("/quotes", methods=["POST"])
 def post_quote():
     with db:
-        db.execute(f"""insert into quotes(text,attribution) values("{request.form['text']}","{request.form['attribution']}")""")
+
+    ##Oude code
+        ##db.execute(f"""insert into quotes(text,attribution) values("{request.form['text']}","{request.form['attribution']}")""")
+    
+    ##Nieuwe code
+        db.execute(
+        "INSERT INTO quotes(text, attribution) VALUES (?, ?)",
+        (request.form['text'], request.form['attribution'])
+        )
     return redirect("/#bottom")
 
 
@@ -78,6 +86,10 @@ def signin():
             user_id = cursor.lastrowid
     
     response = make_response(redirect('/'))
+    ##Oude code
+    ## response.set_cookie('user_id', str(user_id))
+
+    ##nieuwe code
     response.set_cookie('user_id', str(user_id), secure=True, httponly=True, samesite='Lax')
     return response
 
