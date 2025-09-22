@@ -75,7 +75,7 @@ jobs:
 
   deploy:
     name: Deploy
-    needs: [ test ]
+    needs: [ scan ]
     runs-on: self-hosted
     steps:
       - name: Checkout source code
