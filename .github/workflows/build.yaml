@@ -86,10 +86,10 @@ jobs:
               sudo kubectl apply -f ${{ github.workspace }}/kubernetes/nginx-service.yaml --force
 
 
-name: Automated API tests using Postman CLI
-
-on: push
+name: Postman
 needs: [deploy]
+runs-on: self-hosted
+
 
 jobs:
   automated-api-tests:
