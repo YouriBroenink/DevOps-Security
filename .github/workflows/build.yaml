@@ -88,6 +88,7 @@ jobs:
 postman test:
     name: Postman API Tests
     needs: [deploy]
+    automated-api-tests:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -102,4 +103,5 @@ postman test:
       - name: Run API tests
         run: |
           postman collection run "${{ github.workspace }}/postman/collections/My Collection.json" --integration-id "181140-${{ github.run_id }}"
+          # Lint your API using Postman CLI
           postman api lint e563a70d-820a-4621-a8a6-c62139b975a4 --integration-id 181140
