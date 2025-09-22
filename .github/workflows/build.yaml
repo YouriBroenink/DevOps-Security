@@ -101,4 +101,4 @@ jobs:
 
       - name: Run API tests
         run: |
-          postman collection run "${{ github.workspace }}/postman/collections/My Collection.json" --integration-id "181140-${{ github.run_id }}"
+          postman collection run "${{ github.workspace }}/postman/collections/MyCollection.json" --integration-id "181140-${{ github.run_id }}"
