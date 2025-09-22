@@ -68,8 +68,7 @@ only-severities: critical,high
 ignore-base: false
 ignore-unchanged: false
 write-comment: true
-github-token: ${{ secrets.NEW_GITHUB_TOKEN }} # to be able to write the
-comment
+github-token: ${{ secrets.NEW_GITHUB_TOKEN }} # to be able to write the comment
 exit-code: true
 exit-on: vulnerability
 
