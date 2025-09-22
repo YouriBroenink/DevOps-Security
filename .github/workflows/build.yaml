@@ -87,7 +87,9 @@ jobs:
 
 
 name: Automated API tests using Postman CLI
-needs: [ deploy ]
+
+on: push
+needs: [deploy]
 
 jobs:
   automated-api-tests:
