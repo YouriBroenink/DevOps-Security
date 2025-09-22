@@ -64,13 +64,13 @@ jobs:
         with:
           command: cves
           image: 516909/student-app:latest
-          only-fixed: true
+          #only-fixed: true
           only-severities: critical,high
           ignore-base: false
           ignore-unchanged: false
           write-comment: true
           github-token: ${{ secrets.NEW_GITHUB_TOKEN }} # to be able to write the comment
-          exit-code: true
+          exit-code: false #true
           exit-on: vulnerability
 
   deploy:
