@@ -64,7 +64,7 @@ jobs:
         with:
           command: cves
           image: 516909/student-app:latest
-#         only-fixed: true
+          only-fixed: true
           only-severities: critical,high
           ignore-base: false
           ignore-unchanged: false
